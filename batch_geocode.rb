@@ -34,14 +34,13 @@ if File.exist?(@output_file)
   File.delete(@output_file)
 end
 
-# Geocoder.configure(
-
-#   # geocoding service (see below for supported options):
-#   :lookup => :mapquest,
-
-#   # to use an API key:
-#   :api_key => @geocoder_api_key
-# )
+Geocoder.configure(
+  # geocoding service (see below for supported options):
+  :lookup => :bing,
+  # to use an API key:
+  :api_key => @geocoder_api_key,
+  :timeout => 5
+)
 
 puts "reading address file"
 # write to CSV
